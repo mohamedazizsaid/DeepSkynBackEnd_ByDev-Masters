@@ -91,7 +91,9 @@ describe('NestJS modules', () => {
           if (!metadata) {
             return {};
           }
-          const Mock = moduleMocker.generateFromMetadata(metadata) as new () => unknown;
+          const Mock = moduleMocker.generateFromMetadata(
+            metadata,
+          ) as new () => unknown;
           return new Mock();
         }
 
