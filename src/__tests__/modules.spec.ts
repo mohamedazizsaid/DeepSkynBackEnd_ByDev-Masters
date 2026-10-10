@@ -80,7 +80,9 @@ describe('NestJS modules', () => {
       .useMocker((token) => {
         if (token === ConfigService) {
           return {
-            get: jest.fn((_key: string, defaultValue?: unknown) => defaultValue ?? 'test'),
+            get: jest.fn(
+              (_key: string, defaultValue?: unknown) => defaultValue ?? 'test',
+            ),
           };
         }
 
